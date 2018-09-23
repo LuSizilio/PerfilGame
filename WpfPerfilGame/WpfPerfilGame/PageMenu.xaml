@@ -1,0 +1,28 @@
+﻿<Page x:Class="WpfPerfilGame.PageMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPerfilGame"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="PageMenu">
+
+    <Grid Background="#FF00AEDB">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Button Name="BtnInciarPartida" Content="Iniciar Partida" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Width="300" Height="60" FontSize="30" BorderBrush="{x:Null}" Click="BtnIniciarPartida_Click"/>
+        <Button Name="BtnPerfil" Content="Perfil" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Width="300" Height="60" FontSize="30" BorderBrush="{x:Null}" Click="BtnPerfil_Click"/>
+        <Button Name="BtnSair" Content="Sair" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" Width="300" Height="60" FontSize="30" BorderBrush="{x:Null}" Background="#FFD11141" Click="BtnSair_Click"/>
+    </Grid>
+</Page>

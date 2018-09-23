@@ -1,0 +1,11 @@
+Negocio.NPerfil NPerfil = new Negocio.NPerfil();
+Negocio.NDica NDica = new Negocio.NDica();
+
+Modelo.Perfil perfil = new Modelo.Perfil("Nome", txtCPerfil.Text);
+NPerfil.Insert(perfil);
+
+Modelo.Dica dica = new Modelo.Dica(1, txtD1Perfil.Text);
+NDica.Insert(txtCPerfil.Text, dica);
+
+dica = new Modelo.Dica(2, txtD2Perfil.Text);
+NDica.Insert(txtCPerfil.Text, dica);
