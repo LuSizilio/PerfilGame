@@ -23,6 +23,8 @@ namespace WpfPerfilGame
         public PageIniciarPartida()
         {
             InitializeComponent();
+            Negocio.NPerfil NPerfil = new Negocio.NPerfil();
+            if(NPerfil.Select().Count() == 0)NPerfil.PerfisInciais();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
