@@ -38,22 +38,58 @@ namespace Modelo
         {
             return ordem;
         }
+        public void SetPlacar(int aplacar)
+        {
+            this.placar += aplacar;
+        }
 
         //GlobalVar
-        private static int JogadorRodada = 2;
-        public static void NovaRodada()
+        private static int JogadorVez = 0;
+        private static int qntJogadores = 0;
+        private static string Ganhador = "";
+        private static int Mediador = 0;
+        public static void SetJogadorVez()
         {
-            JogadorRodada = 2;
+            do
+            {
+                JogadorVez += 1;
+                if (JogadorVez > qntJogadores)
+                    JogadorVez = 1;
+                
+            }
+            while (JogadorVez == Mediador);
         }
-        public static void AddRodada()
+        public static void SetMediador()
         {
-            JogadorRodada += 1;
-            if (JogadorRodada > 4)
-                JogadorRodada = 1;
+            Mediador += 1;
+            if (Mediador > qntJogadores)
+                Mediador = 1;
+            JogadorVez = Mediador;
         }
-        public static int GetRodada()
+        public static int GetMediador()
         {
-            return JogadorRodada;
+            return Mediador;
+        }
+        public static int GetJogadorVez()
+        {
+            return JogadorVez;
+        }
+        public static string GetGanhador()
+        {
+            return Ganhador;
+        }
+        public static void SetGanhador(string aGanhador)
+        {
+            Ganhador = aGanhador;
+        }
+        public static void SetQnt(int i)
+        {
+            Ganhador = "";
+            qntJogadores = i;
+        }
+        public static int GetQnt()
+        {
+            return qntJogadores;
         }
     }
 }

@@ -11,6 +11,11 @@ namespace Negocio
     public class NPerfil
     {
         private List<Perfil> perfis;
+        private static List<Perfil> perfisUsados;
+        public static void SetPerfisUsados()
+        {
+            perfisUsados = new List<Perfil>();
+        }
         private PPerfil pc = new PPerfil();
 
         public List<Perfil> Select()
@@ -21,9 +26,32 @@ namespace Negocio
 
         public Perfil PerfilAleatorio()
         {
+            int aux = 0;
             Random rnd = new Random();
             perfis = pc.Abrir();
-            Perfil p = perfis[rnd.Next(0,perfis.Count())];
+            Perfil p = new Perfil();
+            do
+            {
+                aux = 0;
+                if(perfis.Count() != perfisUsados.Count()) {
+                    p = perfis[rnd.Next(0, perfis.Count())];
+                    if (perfisUsados.Count != 0)
+                    {
+                        foreach (Perfil d in perfisUsados)
+                        {
+                            if (d.nome == p.nome)
+                            {
+                                aux = 1;
+                            }
+                        }
+                    }
+                    if(aux == 0)
+                    {
+                        perfisUsados.Add(p);
+                    }
+                }
+            } while (aux == 1);
+            
             return p;
         }
 

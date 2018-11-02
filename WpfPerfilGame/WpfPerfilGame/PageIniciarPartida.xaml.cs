@@ -62,21 +62,22 @@ namespace WpfPerfilGame
             NParticipante.Insert(p);
             p = new Modelo.Participante(1, txtP2.Text);
             NParticipante.Insert(p);
-            int qnt = 2;
+            Modelo.Participante.SetQnt(2);
             if(CBPlayers.SelectedIndex.ToString() == "1")
             {
                 p = new Modelo.Participante(2, txtP3.Text);
                 NParticipante.Insert(p);
-                qnt = 3;
+                Modelo.Participante.SetQnt(3);
             } else if (CBPlayers.SelectedIndex.ToString() == "2")
             {
                 p = new Modelo.Participante(2, txtP3.Text);
                 NParticipante.Insert(p);
                 p = new Modelo.Participante(3, txtP4.Text);
-                NParticipante.Insert(p);             
-                qnt = 4;
+                NParticipante.Insert(p);
+                Modelo.Participante.SetQnt(4);
             }
-            NParticipante.GerarOrdem(qnt);
+            NParticipante.GerarOrdem(Modelo.Participante.GetQnt());
+            Negocio.NPerfil.SetPerfisUsados();
             NavigationService.Navigate(new Uri("/PageMediador.xaml", UriKind.Relative));
         }
     }

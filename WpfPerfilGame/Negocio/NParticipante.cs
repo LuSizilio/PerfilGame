@@ -66,18 +66,44 @@ namespace Negocio
             pc.Salvar(participantes);
         }
 
-        public string GetMediador()
+        public Participante GetMediador()
         {
             participantes = pc.Abrir();
-            Modelo.Participante r = participantes.Where(x => x.ordem == 1).Single();
-            return r.nome;
+            Modelo.Participante r = participantes.Where(x => x.ordem == Participante.GetMediador()).Single();
+            return r;
         }
 
         public Participante GetJogadorVez()
         {
             participantes = pc.Abrir();
-            Modelo.Participante r = participantes.Where(x => x.ordem == Modelo.Participante.GetRodada()).Single();
+            Modelo.Participante r = participantes.Where(x => x.ordem == Participante.GetJogadorVez()).Single();
             return r;
+        }
+
+        public void NovaRodada()
+        {
+            Participante.SetMediador();
+        }
+        public void SetJogadorVez()
+        {
+            Participante.SetJogadorVez();
+        }
+
+        public void UpdatePontos(int id,int pontos)
+        {
+            participantes = pc.Abrir();
+            foreach (Participante p in participantes)
+            {
+                if (p.GetId() == id)
+                {
+                    participantes.Remove(p);
+                    p.SetPlacar(pontos);
+                    participantes.Add(p);
+                    break;
+                }
+
+            }
+            pc.Salvar(participantes);
         }
 
     }

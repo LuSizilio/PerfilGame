@@ -20,6 +20,13 @@ namespace Negocio
             return obj.dicas;
         }
 
+        public Dica SelectDica(string perfil, int dica)
+        {
+            perfis = pc.Abrir();
+            Perfil obj = perfis.Where(x => x.nome == perfil).Single();
+            return obj.dicas[dica];
+        }
+
         public void Insert(string perfil, Dica c)
         {
             perfis = pc.Abrir();

@@ -16,22 +16,19 @@ using System.Windows.Shapes;
 namespace WpfPerfilGame
 {
     /// <summary>
-    /// Interação lógica para PageMediador.xam
+    /// Interação lógica para PageVencedor.xam
     /// </summary>
-    public partial class PageMediador : Page
+    public partial class PageVencedor : Page
     {
-        public PageMediador()
+        public PageVencedor()
         {
             InitializeComponent();
-            Negocio.NParticipante NParticipante = new Negocio.NParticipante();
-            NParticipante.NovaRodada();
-            Modelo.Participante mediador = NParticipante.GetMediador();
-            txtMediador.Text = mediador.nome;
+            txtVencedor.Text = Modelo.Participante.GetGanhador();
         }
 
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/PagePerfil.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/PageMenu.xaml", UriKind.Relative));
         }
     }
 }

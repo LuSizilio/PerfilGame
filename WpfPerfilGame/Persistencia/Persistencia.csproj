@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="PParticipante.cs" />
     <Compile Include="PPerfil.cs" />
+    <Compile Include="PPerfilUsado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

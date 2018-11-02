@@ -23,6 +23,6 @@
         </Grid.RowDefinitions>
         <Button Name="BtnInciarPartida" Content="Iniciar Partida" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Width="300" Height="60" FontSize="30" BorderBrush="{x:Null}" Click="BtnIniciarPartida_Click"/>
         <Button Name="BtnPerfil" Content="Perfil" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Width="300" Height="60" FontSize="30" BorderBrush="{x:Null}" Click="BtnPerfil_Click"/>
-        <Button Name="BtnSair" Content="Sair" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" Width="300" Height="60" FontSize="30" BorderBrush="{x:Null}" Background="#FFD11141" Click="BtnSair_Click"/>
+        <Button Name="BtnSair" Content="Voltar" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" Width="300" Height="60" FontSize="30" BorderBrush="{x:Null}" Background="#FFD11141" Click="BtnSair_Click"/>
     </Grid>
 </Page>
