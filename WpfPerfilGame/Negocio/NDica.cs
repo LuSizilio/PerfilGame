@@ -11,8 +11,24 @@ namespace Negocio
     public class NDica
     {
         private List<Perfil> perfis;
+        private static List<Dica> DicasUsadas = new List<Dica>();
         private PPerfil pc = new PPerfil();
 
+        public static void IniciarDicas()
+        {
+            DicasUsadas = new List<Dica>();
+        }
+
+        public List<Dica> GetDicasUsadas()
+        {
+            return DicasUsadas;
+        }
+
+        public void UsarDica(Dica d)
+        {
+            DicasUsadas.Add(d);
+        }
+        
         public List<Dica> Select(string perfil)
         {
             perfis = pc.Abrir();
@@ -36,6 +52,11 @@ namespace Negocio
             perfis.Remove(obj);
             perfis.Add(perfilnovo);
             pc.Salvar(perfis);
+        }
+
+        public void UsarDica()
+        {
+
         }
     }
 }

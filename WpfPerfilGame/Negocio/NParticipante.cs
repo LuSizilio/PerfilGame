@@ -106,5 +106,32 @@ namespace Negocio
             pc.Salvar(participantes);
         }
 
+        public void CriarPartida(string qnt, string txtP1, string txtP2, string txtP3, string txtP4)
+        {
+            if (qnt != "1" && qnt != "2" && qnt != "0") throw new ArgumentException();
+            Participante p;
+            Limpar();
+            p = new Participante(0, txtP1);
+            Insert(p);
+            p = new Participante(1, txtP2);
+            Insert(p);
+            Participante.SetQnt(2);
+            if (qnt == "1")
+            {
+                p = new Participante(2, txtP3);
+                Insert(p);
+                Participante.SetQnt(3);
+            }
+            else if (qnt == "2")
+            {
+                p = new Participante(2, txtP3);
+                Insert(p);
+                p = new Participante(3, txtP4);
+                Insert(p);
+                Participante.SetQnt(4);
+            }
+            GerarOrdem(Participante.GetQnt());
+            NPerfil.SetPerfisUsados();
+        }
     }
 }
