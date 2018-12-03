@@ -11,4 +11,5 @@
     <Grid Background="#FF00AEDB">
         <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
     </Grid>
+    
 </Window>

@@ -29,7 +29,7 @@ namespace WpfPerfilGame
             Negocio.NDica.IniciarDicas();
             Negocio.NParticipante NParticipante = new Negocio.NParticipante();
             Modelo.Participante Mediador = NParticipante.GetMediador();
-            txtMediador.Text = Mediador.nome;
+            txtMediador.Text = Mediador.nome + " " + Mediador.placar;
             txtCategoria.Text = perfil.categoria;
             txtPerfil.Text = perfil.nome;
             JogarRodada();
@@ -40,7 +40,7 @@ namespace WpfPerfilGame
             Negocio.NParticipante NParticipante = new Negocio.NParticipante();
             NParticipante.SetJogadorVez();
             Modelo.Participante JogadorVez = NParticipante.GetJogadorVez();
-            txtJogador.Text = JogadorVez.nome;
+            txtJogador.Text = JogadorVez.nome + " " + JogadorVez.placar.ToString();
         }
 
         private void BtnDica1_Click(object sender, RoutedEventArgs e)
@@ -389,18 +389,18 @@ namespace WpfPerfilGame
             Modelo.Participante Mediador = NParticipante.GetMediador();
             Modelo.Participante JogadorVez = NParticipante.GetJogadorVez();       
             NParticipante.UpdatePontos(JogadorVez.id, 10 - pontos);
-            if ((JogadorVez.placar + 10 - pontos) >= 20)
+            if ((JogadorVez.placar + 10 - pontos) >= 10)
             {
                 Modelo.Participante.SetGanhador(JogadorVez.nome);
                 NavigationService.Navigate(new Uri("/PageVencedor.xaml", UriKind.Relative));
             }
             NParticipante.UpdatePontos(Mediador.id, pontos);
-            if ((Mediador.placar + pontos) >= 20)
+            if ((Mediador.placar + pontos) >= 10)
             {
                 Modelo.Participante.SetGanhador(Mediador.nome);
                 NavigationService.Navigate(new Uri("/PageVencedor.xaml", UriKind.Relative));
             }
-            if((JogadorVez.placar + 10 - pontos) < 20 && (Mediador.placar + pontos < 20))
+            if((JogadorVez.placar + 10 - pontos) < 10 && (Mediador.placar + pontos < 10))
             {
                 NavigationService.Navigate(new Uri("/PageMediador.xaml", UriKind.Relative));
             }

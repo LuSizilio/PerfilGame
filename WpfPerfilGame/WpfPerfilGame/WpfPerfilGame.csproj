@@ -78,6 +78,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageListarDicas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageListarPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageMediador.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -104,6 +112,12 @@
     </Compile>
     <Compile Include="PageJogadorVez.xaml.cs">
       <DependentUpon>PageJogadorVez.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageListarDicas.xaml.cs">
+      <DependentUpon>PageListarDicas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageListarPerfil.xaml.cs">
+      <DependentUpon>PageListarPerfil.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageMediador.xaml.cs">
       <DependentUpon>PageMediador.xaml</DependentUpon>

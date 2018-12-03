@@ -1,0 +1,50 @@
+﻿<Page x:Class="WpfPerfilGame.PageListarDicas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPerfilGame"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="PageListarDicas">
+
+    <Grid Background="#FF00AEDB">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <TextBox Name="txtPerfil" FontSize="35" Grid.Column="1" Grid.Row="1" Margin="0,0,5,5"/>
+        <ComboBox Name="CbCategoria" FontSize="35" Grid.Column="2" Grid.Row="1" Margin="5,0,0,5">
+            <ComboBoxItem IsSelected="True" Content="Pessoa"/>
+            <ComboBoxItem Content="Ano"/>
+            <ComboBoxItem>Lugar</ComboBoxItem>
+        </ComboBox>
+        <TextBox Name="txtD1" TextWrapping="Wrap" FontSize="20" Grid.Column="1" Grid.Row="2" Margin="0,0,5,0"/>
+        <TextBox Name="txtD2" TextWrapping="Wrap" FontSize="20" Grid.Column="2" Grid.Row="2" Margin="5,0,0,0"/>
+        <TextBox Name="txtD3" TextWrapping="Wrap" FontSize="20" Grid.Column="1" Grid.Row="3" Margin="0,0,5,0"/>
+        <TextBox Name="txtD4" TextWrapping="Wrap" FontSize="20" Grid.Column="2" Grid.Row="3" Margin="5,0,0,0"/>
+        <TextBox Name="txtD5" TextWrapping="Wrap" FontSize="20" Grid.Column="1" Grid.Row="4" Margin="0,0,5,0"/>
+        <TextBox Name="txtD6" TextWrapping="Wrap" FontSize="20" Grid.Column="2" Grid.Row="4" Margin="5,0,0,0"/>
+        <TextBox Name="txtD7" TextWrapping="Wrap" FontSize="20" Grid.Column="1" Grid.Row="5" Margin="0,0,5,0"/>
+        <TextBox Name="txtD8" TextWrapping="Wrap" FontSize="20" Grid.Column="2" Grid.Row="5" Margin="5,0,0,0"/>
+        <TextBox Name="txtD9" TextWrapping="Wrap" FontSize="20" Grid.Column="1" Grid.Row="6" Margin="0,0,5,0"/>
+        <TextBox Name="txtD10" TextWrapping="Wrap" FontSize="20" Grid.Column="2" Grid.Row="6" Margin="5,0,0,0"/>
+        <Button Margin="0,5,0,0" Name="BtnVoltar" Content="Voltar" VerticalContentAlignment="Center" Grid.Row="7" Grid.Column="1" VerticalAlignment="Top" Width="300" Height="60" FontSize="30" BorderBrush="{x:Null}" Click="BtnVoltar_Click"/>
+        <Button Margin="0,5,0,0" Background="#FFD11141" Name="BtnDPerfil" Content="Deletar" VerticalContentAlignment="Center" Grid.Row="7" Grid.Column="2" VerticalAlignment="Top" Width="300" Height="60" FontSize="30" BorderBrush="{x:Null}" Click="BtnDPerfil_Click"/>
+        <Button Margin="0,5,0,0" Name="BtnSPerfil" Content="Salvar" VerticalContentAlignment="Center" Grid.Row="8" Grid.Column="2" VerticalAlignment="Top" Width="300" Height="60" FontSize="30" BorderBrush="{x:Null}" Click="BtnSPerfil_Click"/>
+    </Grid>
+</Page>

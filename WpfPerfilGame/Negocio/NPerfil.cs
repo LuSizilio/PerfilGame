@@ -24,6 +24,19 @@ namespace Negocio
             return perfis;
         }
 
+        public Perfil GetPerfil(string nome)
+        {
+            perfis = pc.Abrir();
+            foreach(Perfil n in perfis)
+            {
+                if(n.nome == nome)
+                {
+                    return n;
+                }
+            }
+            return null;
+        }
+
         public Perfil PerfilAleatorio()
         {
             int aux = 0;
@@ -62,10 +75,25 @@ namespace Negocio
             {
                 if (d.nome == c.nome)
                 {
-                    return;
+                    throw new Exception();
                 }
             }
             perfis.Add(c);
+            pc.Salvar(perfis);
+        }
+
+        public void Delete(Perfil c)
+        {
+            perfis = pc.Abrir();
+            foreach (Perfil d in perfis)
+            {
+                if (d.nome == c.nome)
+                {
+                    c = d;
+                    
+                }
+            }
+            perfis.Remove(c);
             pc.Salvar(perfis);
         }
 

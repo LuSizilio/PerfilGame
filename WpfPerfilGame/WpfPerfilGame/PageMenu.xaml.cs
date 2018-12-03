@@ -30,7 +30,7 @@ namespace WpfPerfilGame
         }
         private void BtnPerfil_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/PageMenu.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/PageListarPerfil.xaml", UriKind.Relative));
         }
         private void BtnSair_Click(object sender, RoutedEventArgs e)
         {

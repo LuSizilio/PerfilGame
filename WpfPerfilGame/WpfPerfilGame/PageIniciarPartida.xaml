@@ -28,10 +28,10 @@
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Players" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="/Fontes/#Kg Red Hands" FontSize="50" Grid.Row="1"/>
-        <TextBox Name="txtP1" VerticalContentAlignment="Center" FontSize="35" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4"/>
-        <TextBox Name="txtP2" VerticalContentAlignment="Center" FontSize="35" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5"/>
-        <TextBox Name="txtP3" VerticalContentAlignment="Center" FontSize="35" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6"/>
-        <TextBox Name="txtP4" VerticalContentAlignment="Center" FontSize="35" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7"/>
+        <TextBox MaxLength="7" Name="txtP1" VerticalContentAlignment="Center" FontSize="35" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4"/>
+        <TextBox MaxLength="7" Name="txtP2" VerticalContentAlignment="Center" FontSize="35" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5"/>
+        <TextBox MaxLength="7" Name="txtP3" VerticalContentAlignment="Center" FontSize="35" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6"/>
+        <TextBox MaxLength="7" Name="txtP4" VerticalContentAlignment="Center" FontSize="35" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7"/>
         <ComboBox Name="CBPlayers" SelectedIndex="0" Grid.ColumnSpan="2" VerticalContentAlignment="Center" FontFamily="/Fontes/#Mairy Black" FontSize="55" Grid.Column="1" Grid.Row="2" SelectionChanged="ComboBox_SelectionChanged" Cursor="Hand">
             <ComboBoxItem Cursor="Hand">2</ComboBoxItem>
             <ComboBoxItem Cursor="Hand">3</ComboBoxItem>
