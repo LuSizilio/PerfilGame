@@ -103,8 +103,7 @@ namespace WpfPerfilGame
         {
             Negocio.NDica NDica = new Negocio.NDica();
             Negocio.NPerfil NPerfil = new Negocio.NPerfil();
-            if (PageListarPerfil.EditarNome == null)
-            {
+            
                 try { 
                     string categoria = "";
                     string NomePerfil = txtPerfil.Text;
@@ -120,7 +119,14 @@ namespace WpfPerfilGame
                             categoria = "Lugar";
                             break;
                     }
-                    Modelo.Perfil perfil = new Modelo.Perfil(categoria, NomePerfil);
+                    if (NomePerfil == "" || txtD1.Text == "" || txtD2.Text == "" || txtD3.Text == "" || txtD4.Text == "" || txtD5.Text == "" || txtD6.Text == "" || txtD7.Text == "" || txtD8.Text == "" || txtD9.Text == "" || txtD10.Text == "") throw new Exception();
+                if (PageListarPerfil.EditarNome != null)
+                {
+                    Modelo.Perfil p = NPerfil.GetPerfil(PageListarPerfil.EditarNome);
+                    NPerfil.Delete(p);
+                }
+
+                Modelo.Perfil perfil = new Modelo.Perfil(categoria, NomePerfil);
                     NPerfil.Insert(perfil);
                     Modelo.Dica dica = new Modelo.Dica(1, txtD1.Text);
                     NDica.Insert(NomePerfil, dica);
@@ -151,13 +157,15 @@ namespace WpfPerfilGame
 
                     dica = new Modelo.Dica(10, txtD10.Text);
                     NDica.Insert(NomePerfil, dica);
-                    NavigationService.Navigate(new Uri("/PageListarPerfil.xaml", UriKind.Relative));
+                NDica.Insert(NomePerfil, dica);
+                NavigationService.Navigate(new Uri("/PageListarPerfil.xaml", UriKind.Relative));
+
                 }
                 catch
                 {
-                    MessageBox.Show("Erro ao criar perfil");
+                    MessageBox.Show("Erro ao criar perfil, certifique-se se o perfil não existe ou se não há campos vazios");
                 }
-            }
+            
         }
     }
 }

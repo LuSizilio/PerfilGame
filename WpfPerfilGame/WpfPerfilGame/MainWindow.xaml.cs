@@ -24,7 +24,7 @@ namespace WpfPerfilGame
         public MainWindow()
         {
             InitializeComponent();
-            Main.Content = new PageListarPerfil();
+            Main.Content = new PageInicio();
 
         }
     }
